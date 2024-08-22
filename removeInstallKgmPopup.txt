@@ -1,0 +1,22 @@
+// ==UserScript==
+// @name         Remove Install KoGaMa Pop-Up
+// @namespace    http://tampermonkey.net/
+// @version      0.0
+// @description  Removes install kgm pop-up
+// @author       Unknown
+// @match        https://www.kogama.com/*
+// @match        https://kogama.com.br/*
+// @match        https://friends.kogama.com/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=kogama.com
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    const removeInstallKgmPopup = () => {
+        let popup = document.querySelector('.MuiSnackbar-root.MuiSnackbar-anchorOriginBottomRight');
+        if (popup) {
+            popup.remove();
+            console.log('Install KoGaMa Pop-up removed:', popup);
+        }};
+    setInterval(removeInstallKgmPopup, 0);
+})();
